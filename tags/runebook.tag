@@ -42,7 +42,7 @@
     var remote;
     this.on("mount", () => {
       remote = require('electron').remote;
-    })
+    });
 
     this.on("updated", () => {
       if(freezer.get().showchangelog) {
@@ -51,11 +51,11 @@
       freezer.get().set("showchangelog", false);
     })
 
-    close() {
+    function close() {
       remote.getCurrentWindow().close();
     }
 
-    minimize() {
+    function minimize() {
       remote.getCurrentWindow().minimize();
     }
 
